@@ -1,3 +1,16 @@
 {% extends 'insta/base.html' %}
 
-<h1>Instagram</h1>
+{% block content %}
+{{block.super}}
+<div class="card">
+    <div class="card-header">
+        <div class="profile-image">
+
+        </div>
+        <div class="post-info">
+            <div class="post-name"></div>
+            <div class="post-location"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
