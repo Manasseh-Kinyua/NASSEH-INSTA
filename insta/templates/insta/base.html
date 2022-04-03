@@ -7,11 +7,11 @@
   {% if title %}
   <title>Nasseh Insta - {{title}}</title>
   {% else %}
-    <title> Nasseh Insta </title>
+  <title> Nasseh Insta </title>
   {% endif %}
 
   {% block styles %}
-    
+    <link rel="stylesheet" href="{% static 'css/insta.css' %}">
   {% endblock %}
 
 </head>
@@ -22,7 +22,7 @@
     {%endblock%}
 
     {% block scripts %}
-    
+    <script src="https://kit.fontawesome.com/97969ac49a.js" crossorigin="anonymous"></script>
     {% endblock %}
 </body>
 </html>
