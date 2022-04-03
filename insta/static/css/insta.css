@@ -17,4 +17,57 @@ header {
     text-align: center;
     justify-content: center;
     padding: 26px 20px;
+    /* flex-wrap: wrap; */
+}
+
+.navigation a {
+    color: #111;
+}
+
+.instalogo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 30%;
+}
+
+.instalogo a {
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.vl {
+    border-left: 1.5px solid #111;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.contact_icons {
+    display: flex;
+    justify-content: flex-end;
+    width: 30px;
+    padding-left: 100px;
+}
+
+.contact_icons a {
+    padding-left: 30px;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.search_bar {
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    border-radius: 3px;
+    columns: #999;
+    cursor: text;
+    text-align: center;
+    padding-right: 350px;
+    /* position: absolute; */
+}
+
+.search_bar a {
+    font-size: 25px;
+    padding-left: 15px;
 }
