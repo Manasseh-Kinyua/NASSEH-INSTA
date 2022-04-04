@@ -1,6 +1,6 @@
-body {
+/* body {
     background-color: #ffff;
-}
+} */
 
 header {
     background-color: #FAFAFA;
@@ -79,4 +79,40 @@ header {
     width: 100%;
     top: 83px;
     left: 0px;
+    z-index: -1;
+}
+
+.card {
+    background-color: #fff;
+    margin: 0 auto;
+    width: 1000px;
+    height: auto;
+    border: .8px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 60px;
+}
+
+.card-header {
+    padding: 10px;
+}
+
+.card-header a {
+    text-decoration: none;
+    color: black;
+}
+
+.profile-image {
+    display: inline-block;
+    background-color: navy;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    margin: 0;
+    border: 0 solid black;
+    border-radius: 50%;
+}
+
+.post-info {
+    display: inline-block;
+    padding-left: 14px;
 }
