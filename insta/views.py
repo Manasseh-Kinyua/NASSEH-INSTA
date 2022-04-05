@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Image
+from .models import Image, Comments
 from .forms import CommentForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
@@ -58,7 +58,12 @@ def index(request):
 @login_required(login_url = '/login')
 def image_details(request, pk):
     image = Image.objects.get(id=pk)
-    return render(request, 'insta/imagedetail.html', {"image":image})
+    comments = Comments.objects.all()
+    context = {
+        "image": image,
+        "comments": comments,
+    }
+    return render(request, 'insta/imagedetail.html', context)
 
 @login_required(login_url = '/login')
 def comment(request):
