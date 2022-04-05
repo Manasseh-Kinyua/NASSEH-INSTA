@@ -3,6 +3,11 @@
 
 {% block content %}
 <div class="container">
+    <img src="{{ image.image.url }}" alt="">
+    <h2>COMMENTS</h2>
+    {% for comment in comments %}
+    <h3>{{ comment.id }}. {{ comment.comment }} posted by: @{{ comment.user }} {{ image.created | timesince }} ago</h3>
+    {% endfor %}
     
 </div>
 {% endblock %}
