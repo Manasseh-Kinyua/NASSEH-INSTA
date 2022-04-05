@@ -5,10 +5,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 def loginPage(request):
-    if request.method == 'Post':
+    page = 'login'
+    if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
 
@@ -23,12 +25,28 @@ def loginPage(request):
         else:
             messages.error(request, 'Username or password does not exist')
         
-    context = {}
+    context = {
+        "page": page
+    }
     return render(request, 'insta/login_register.html', context)
 
 def logoutUser(request):
     logout(request)
     return redirect('index')
+
+def registerPage(request):
+    form = UserCreationForm()
+    if request.method =='POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit = False)
+            user.username = user.username.lower()
+            user.save()
+            login(request, user)
+            return redirect('index')
+        else:
+            messages.error(request, 'A error Occured during registration')
+    return render(request, 'insta/login_register.html', {"form":form})
 
 def index(request):
     images = Image.objects.all()
