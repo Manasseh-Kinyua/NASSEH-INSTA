@@ -78,6 +78,7 @@ def comment(request):
     }
     return render(request, 'insta/comment_form.html', context)
 
+@login_required(login_url = '/login')
 def profile(request):
     profile = Profile.objects.all()
     context = {
