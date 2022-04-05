@@ -9,13 +9,13 @@
 
         </div>
         <div class="post-info">
-            <div class="post-name">@nassehkiny</div>
+            <div class="post-name">{{ image.user }}</div>
             <div class="post-location">Nairobi</div>
         </div>
         <div class="post-options"><i class="fas fa-ellipsis-h"></i></div>
     </div>
     <div class="post-image">
-        <img src="{{ image.image.url }}" alt="">
+        <a href="{% url 'image_details' image.id %}"><img src="{{ image.image.url }}" alt=""></a>
     </div>
     <div class="engagement">
         <i class="far fa-heart"></i>
@@ -31,7 +31,7 @@
         <span><p>{{image.imageCaption}}</p></span>
     </div>
     <div class="time-posted">
-        <div>12 minutes ago</div>
+        <div>{{ image.created | timesince }} AGO</div>
     </div>
 </div>
 {% endfor %}
