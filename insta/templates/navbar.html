@@ -6,13 +6,20 @@
             <a href="/">Instagram</a>
         </div>
         <div class="search_bar">
+            <form action="GET">
             <input type="text" placeholder="Search">
             <a class="search" href=""><i class="fas fa-search"></i></a>
+            </form>
         </div>
         <div class="contact_icons">
             <a class="explore" href="/"><i class="far fa-compass"></i></a>
             <a class="likes" href="/"><i class="far fa-heart"></i></a>
             <a class="profile" href="/"><i class="far fa-user"></i></a>
         </div>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'login' %">Login</a>
+        {% endif %}
     </div>
 </header>
