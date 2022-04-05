@@ -11,6 +11,7 @@ urlpatterns = [
     path('', views.index, name = 'index'),
     path('image_details/<str:pk>/', views.image_details, name = 'image_details'),
     path('comment/', views.comment, name = 'comment'),
+    path('profile/', views.profile, name = 'profile')
 ]
 
 if settings.DEBUG:

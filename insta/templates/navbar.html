@@ -14,7 +14,7 @@
         <div class="contact_icons">
             <a class="explore" href="/"><i class="far fa-compass"></i></a>
             <a class="likes" href="/"><i class="far fa-heart"></i></a>
-            <a class="profile" href="/"><i class="far fa-user"></i></a>
+            <a class="profile" href="{% url 'profile' %}"><i class="far fa-user"></i></a>
         </div>
         {% if request.user.is_authenticated %}
         <p>Hello {{ request.user }}</p>

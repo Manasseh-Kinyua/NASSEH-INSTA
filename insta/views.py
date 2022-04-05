@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Image, Comments
+from .models import Image, Comments, Profile
 from .forms import CommentForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
@@ -77,3 +77,10 @@ def comment(request):
         "form": form,
     }
     return render(request, 'insta/comment_form.html', context)
+
+def profile(request):
+    profile = Profile.objects.all()
+    context = {
+        "profile": profile
+    }
+    return render(request, 'insta/profile.html', context)
