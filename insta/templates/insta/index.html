@@ -9,7 +9,7 @@
 
         </div>
         <div class="post-info">
-            <div class="post-name">{{ image.user }}</div>
+            <div class="post-name">@{{ image.user }}</div>
             <div class="post-location">Nairobi</div>
         </div>
         <div class="post-options"><i class="fas fa-ellipsis-h"></i></div>
@@ -33,38 +33,9 @@
     <div class="time-posted">
         <div>{{ image.created | timesince }} AGO</div>
     </div>
+    <div>
+        <a href="{% url 'comment' %}">Comment</a>
+    </div>
 </div>
 {% endfor %}
-
-<!-- <div class="card">
-    <div class="card-header">
-        <div class="profile-image">
-
-        </div>
-        <div class="post-info">
-            <div class="post-name">@nassehkiny</div>
-            <div class="post-location">Nairobi</div>
-        </div>
-        <div class="post-options"><i class="fas fa-ellipsis-h"></i></div>
-    </div>
-    <div class="post-image">
-        <img src="https://images.unsplash.com/photo-1472162314594-eca3c3d90df1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwxMTU3fHxlbnwwfHx8fA%3D%3D&w=1000&q=80" alt="">
-    </div>
-    <div class="engagement">
-        <i class="far fa-heart"></i>
-        <i class="far fa-comment"></i>
-        <i class="far fa-share-square"></i>
-        <i class="far fa-bookmark"></i>
-    </div>
-    <div class="likes">
-        <a href="">356 likes</a>
-    </div>
-    <div class="caption">
-        <a href=""><h2>@nassehkinyu</h2></a>
-        <span><p>a particular body of knowledge or tradition the lore of baseball heroes. 2 : something that is learned: a : traditional knowledge or belief tribal lore. b : knowledge gained through study or experience the lore of religious architecture.</p></span>
-    </div>
-    <div class="time-posted">
-        <div>12 minutes ago</div>
-    </div>
-</div> -->
 {% endblock %}
